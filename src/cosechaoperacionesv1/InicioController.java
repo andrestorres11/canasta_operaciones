@@ -44,7 +44,7 @@ public class InicioController implements Initializable {
         Platform.exit();//Linea para que cuando se abra la ventana nueva la anterior se cierre.
         //Realizado por @author acastroc 12-06-20
     }
-
+//Prueba git subida
     @FXML
     private void Opciones(ActionEvent event) {
       try {
