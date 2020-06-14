@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--/**
+ * POLITECNICO GRACOLOMBIANO
+ * Pradigmas de Programacion 
+ * Ingenieria Software
+ * @author acastroc
+ * Albeiro Castro
+ * Codigo:2011023897
+ * Fecha de Inicio:12-06-20
+ */-->
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosechaoperacionesv1.InicioController">
+    <children>
+       <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+       <ImageView fitHeight="347.0" fitWidth="617.0" layoutY="-3.0" preserveRatio="true" smooth="true">
+            <image>
+                <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="135.0" fitWidth="91.0" layoutX="147.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/personaje4.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="353.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/personaje2.png" />
+            </image>
+        </ImageView>
+        <Button id="Click" fx:id="button" contentDisplay="CENTER" layoutX="246.0" layoutY="175.0" mnemonicParsing="false" onAction="#Comenzar" prefHeight="30.0" prefWidth="105.0" text="Play" AnchorPane.bottomAnchor="144.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="266.0" AnchorPane.topAnchor="175.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+         <effect>
+            <ImageInput y="1.0">
+               <source>
+                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/btn-comenzar2.png" />
+               </source>
+            </ImageInput>
+         </effect>
+        </Button>
+        <ImageView fitHeight="53.0" fitWidth="200.0" layoutX="198.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenesJuegoParadigmas/interfaz-juego-canasto/titulo.png" />
+            </image>
+        </ImageView>
+      <Button id="Opcion" fx:id="btnopciones" contentDisplay="CENTER" layoutX="246.0" layoutY="217.0" mnemonicParsing="false" onAction="#Opciones" prefHeight="25.0" prefWidth="138.0" text="opciones">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/btn-opciones2.png" />
+               </source>
+            </ImageInput>
+         </effect></Button>
+      <Button id="Cerrar" fx:id="btncerrar" contentDisplay="CENTER" layoutX="246.0" layoutY="258.0" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="25.0" prefWidth="105.0" text="Cerrar">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/btn-salir%20(1).png" />
+               </source>
+            </ImageInput>
+         </effect>
+      </Button>
+    </children>
+</AnchorPane>
