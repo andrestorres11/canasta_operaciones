@@ -44,7 +44,7 @@
          <effect>
             <ImageInput y="1.0">
                <source>
-                  <Image url="file:/C:/xampp/htdocs/CosechaOperacionesV1/src/imagenesJuegoParadigmas/interfaz-juego-sumar/btn-comenzar2.png" />
+                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/btn-comenzar2.png" />
                </source>
             </ImageInput>
          </effect>
@@ -58,7 +58,7 @@
          <effect>
             <ImageInput>
                <source>
-                  <Image url="file:/C:/xampp/htdocs/CosechaOperacionesV1/src/imagenesJuegoParadigmas/interfaz-juego-sumar/btn-opciones2.png" />
+                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/btn-opciones2.png" />
                </source>
             </ImageInput>
          </effect></Button>
@@ -66,7 +66,7 @@
          <effect>
             <ImageInput>
                <source>
-                  <Image url="file:/C:/xampp/htdocs/CosechaOperacionesV1/src/imagenesJuegoParadigmas/interfaz-juego-sumar/btn-salir%20(1).png" />
+                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/btn-salir%20(1).png" />
                </source>
             </ImageInput>
          </effect>
