@@ -7,7 +7,7 @@ package cosechaoperacionesv1.clases;
 
 /**
  *
- * @author andrestorres
+ * @author andrestorres11
  */
 public class Fruta {
     
