@@ -5,6 +5,7 @@
  */
 package cosechaoperacionesv1;
  //prueba 2
+//prueba de rama 19-06-20
 import java.awt.Button;
 import java.io.IOException;
 import java.net.URL;
@@ -93,5 +94,5 @@ public class InicioController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-// luis estuvo aquí
+// luis estuvo aquï¿½
 }
