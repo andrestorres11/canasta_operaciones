@@ -53,13 +53,13 @@ public class Mover extends javax.swing.JFrame {
         });
         Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CanastoLab.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\CosechaOperacionesV1\\src\\imagenesJuegoParadigmas\\interfaz-juego-canasto\\canasto2.png")); // NOI18N
+        CanastoLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesJuegoParadigmas/interfaz-juego-canasto/canasto2.png"))); // NOI18N
         Panel.add(CanastoLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, -1, -1));
 
-        Titulo2Lab.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\CosechaOperacionesV1\\src\\imagenesJuegoParadigmas\\interfaz-juego-sumar\\titulo (1).png")); // NOI18N
+        Titulo2Lab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesJuegoParadigmas/interfaz-juego-canasto/titulo.png"))); // NOI18N
         Panel.add(Titulo2Lab, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, -1));
 
-        FondoLab.setIcon(new javax.swing.ImageIcon("C:\\xampp\\htdocs\\CosechaOperacionesV1\\src\\imagenesJuegoParadigmas\\interfaz-juego-sumar\\fondo2-12-0620.png")); // NOI18N
+        FondoLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2-12-0620.png"))); // NOI18N
         FondoLab.setText("jLabel1");
         Panel.add(FondoLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1080, 620));
 
