@@ -106,7 +106,11 @@ public class Juego extends Application {
                        
                     case "DOWN":
                        abajo = true;
-                       break;   
+                       break;
+                       
+                    case "SPACE":
+                        jugador.setVelocidad(15);
+                        break;
                 }
             }
         });
@@ -130,7 +134,11 @@ public class Juego extends Application {
                        
                     case "DOWN":
                        abajo = false;
-                       break;   
+                       break;  
+                       
+                    case "SPACE":
+                        jugador.setVelocidad(3);
+                        break;
                 }
             }
             
