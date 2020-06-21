@@ -29,7 +29,7 @@ public class Juego extends Application {
     public static boolean izquierda;
     private static final String FONDO = "/imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2-12-0620.png";
     private static final String CANASTO = "/imagenesJuegoParadigmas/interfaz-juego-canasto/canasto2.png";
-    private static final String LEGUMBRE = "/imagenesJuegoParadigmas/interfaz-juego-canasto/14.png";
+    private static final String LEGUMBRE = "/imagenesJuegoParadigmas/interfaz-juego-canasto/1.png";
 
     
     /**
@@ -80,7 +80,7 @@ public class Juego extends Application {
         root = new Group();
         escena = new Scene(root, 700, 500);
         int numero = (int) (Math.random() * 600) + 1;
-        legumbre = new Legumbre(numero, -150, 1, LEGUMBRE);
+        legumbre = new Legumbre(numero, -100, 1, LEGUMBRE);
         lienzo = new Canvas(700, 500);
         root.getChildren().add(lienzo);
         graficos = lienzo.getGraphicsContext2D();
