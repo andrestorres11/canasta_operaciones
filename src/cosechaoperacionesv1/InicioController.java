@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package cosechaoperacionesv1;
- //prueba 2
-//prueba de rama 19-06-20
+
 import java.awt.Button;
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -38,14 +38,14 @@ public class InicioController implements Initializable {
     private Button btnsalirm;
 
     @FXML
-//    Evento mendiante el boton para llamar la interfaz de juego
-    private void Comenzar(ActionEvent event) {
-        Mover fra = new Mover(); //Realizamos una intancia a Jframe-Mover para abrir la interfaz del juego inicio del mismo.
-        fra.setVisible(true);
-        Platform.exit();//Linea para que cuando se abra la ventana nueva la anterior se cierre.
-        //Realizado por @author acastroc 12-06-20
+    //Evento mendiante el boton para llamar la interfaz de juego
+    private void Comenzar(ActionEvent event) throws Exception {
+        this.cerrarVentana(event); //se cierra la ventana actual
+        Stage stage = new Stage(); //se instancia el objeto stage
+        Juego juego = new Juego(); //se instancia el objeto juego
+        juego.start(stage); //se llama a la clase principal del juego
     }
-//Prueba git subida
+
     @FXML
     private void Opciones(ActionEvent event) {
       try {
@@ -73,8 +73,7 @@ public class InicioController implements Initializable {
  
    }
     
-//Realizado por @author acastroc 14-06-20
-
+    //Realizado por @author acastroc 14-06-20
     @FXML
     private void cerrarVentana(ActionEvent event) {
 
@@ -82,6 +81,7 @@ public class InicioController implements Initializable {
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
+    
     @FXML
     private void cerrarVentanaM(ActionEvent event) {
 
@@ -94,5 +94,4 @@ public class InicioController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-// luis estuvo aqu�
 }

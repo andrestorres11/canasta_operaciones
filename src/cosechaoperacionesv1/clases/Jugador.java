@@ -23,7 +23,7 @@ public class Jugador {
     private int y;
     private int vidas;
     private String nombreImagen;
-    private int velocidad = 3;
+    private int velocidad = 2;
     
     /**
      * POLITECNICO GRACOLOMBIANO Pradigmas de Programacion Ingenieria Software
@@ -99,17 +99,37 @@ public class Jugador {
      * @author antorres21 Andres Torres Codigo:1710010952 Fecha de Inicio:10-06-20
     */
     public void mover(){
-        if (x>409){
-            x = -40;
+        
+        if (x >= 460 && Juego.derecha){ //validacion para que llegue al limite de la pantalla derecho
+            Juego.derecha = false;
+        } 
+        if(x <= 0 && Juego.izquierda){ //validacion para que llegue al limite de la pantalla izquierdo
+           Juego.izquierda = false;
+        }
+        if (y >= 410 && Juego.abajo){ //validacion para que llegue al limite de la pantalla abajo
+            Juego.abajo = false;
         }
         
-        if (Juego.derecha){
-            x+=velocidad;
+        if (y <= 300 && Juego.arriba){ //validacion para que llegue al limite de la pantalla arriba
+            Juego.arriba = false;
+        }
+       
+        if (Juego.derecha){ 
+            x+=velocidad; //validacion para que mueva hacia la derecha
         }
         
         if (Juego.izquierda){
-            x-=velocidad;
+            x-=velocidad; //validacion para que mueva hacia la izquierda
         }
+        
+        if (Juego.arriba) {
+            y-=velocidad; //validacion para que mueva hacia arriba
+        }
+        
+        if (Juego.abajo) {
+            y+=velocidad; //validacion para que mueva hacia abajo
+        }
+        
     }
 
     public int getVelocidad() {
@@ -117,7 +137,6 @@ public class Jugador {
     }
 
     public void setVelocidad(int velocidad) {
-        System.out.println("velocidad "+ this.velocidad);
         this.velocidad = velocidad;
     }
     
