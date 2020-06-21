@@ -90,35 +90,26 @@ public class Legumbre {
     */
     public void mover(){
         
-        if (x >= 460 && Juego.derecha){ //validacion para que llegue al limite de la pantalla derecho
+        if (x >= 460 ){ //validacion para que llegue al limite de la pantalla derecho
             Juego.derecha = false;
         } 
-        if(x <= 0 && Juego.izquierda){ //validacion para que llegue al limite de la pantalla izquierdo
+        if(x <= 0 ){ //validacion para que llegue al limite de la pantalla izquierdo
            Juego.izquierda = false;
         }
-        if (y >= 410 && Juego.abajo){ //validacion para que llegue al limite de la pantalla abajo
-            Juego.abajo = false;
+        
+        int numero = (int) (Math.random() * 600) + 1;
+        if (y >= 410 ){ //validacion para que al llegar abajo vuelva a aparecer arriba
+            x = numero;
+            y = -150;
         }
         
-        if (y <= 300 && Juego.arriba){ //validacion para que llegue al limite de la pantalla arriba
+        if (y <= 300 ){ //validacion para que llegue al limite de la pantalla arriba
             Juego.arriba = false;
         }
-       
-        if (Juego.derecha){ 
-            x+=velocidad; //validacion para que mueva hacia la derecha
-        }
         
-        if (Juego.izquierda){
-            x-=velocidad; //validacion para que mueva hacia la izquierda
-        }
-        
-        if (Juego.arriba) {
-            y-=velocidad; //validacion para que mueva hacia arriba
-        }
-        
-        if (Juego.abajo) {
-            y+=velocidad; //validacion para que mueva hacia abajo
-        }
+        x+=velocidad; //validacion para que mueva hacia la derecha
+        x-=velocidad; //validacion para que mueva hacia la izquierda
+        y+=velocidad; //validacion para que mueva hacia abajo
         
     }
 

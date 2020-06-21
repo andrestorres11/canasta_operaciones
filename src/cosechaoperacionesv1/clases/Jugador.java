@@ -23,7 +23,7 @@ public class Jugador {
     private int y;
     private int vidas;
     private String nombreImagen;
-    private int velocidad = 2;
+    private int velocidad = 7;
     
     /**
      * POLITECNICO GRACOLOMBIANO Pradigmas de Programacion Ingenieria Software
@@ -110,7 +110,7 @@ public class Jugador {
             Juego.abajo = false;
         }
         
-        if (y <= 300 && Juego.arriba){ //validacion para que llegue al limite de la pantalla arriba
+        if (y <= 200 && Juego.arriba){ //validacion para que llegue al limite de la pantalla arriba
             Juego.arriba = false;
         }
        

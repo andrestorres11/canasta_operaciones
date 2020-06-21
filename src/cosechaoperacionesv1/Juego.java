@@ -29,7 +29,7 @@ public class Juego extends Application {
     public static boolean izquierda;
     private static final String FONDO = "/imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2-12-0620.png";
     private static final String CANASTO = "/imagenesJuegoParadigmas/interfaz-juego-canasto/canasto2.png";
-    private static final String LEGUMBRE = "/imagenesJuegoParadigmas/interfaz-juego-canasto/14.png";
+    private static final String LEGUMBRE = "/imagenesJuegoParadigmas/interfaz-juego-canasto/1.png";
 
     
     /**
@@ -72,13 +72,15 @@ public class Juego extends Application {
     
     public void actualizarEstado(){
         jugador.mover();
+        legumbre.mover();
     }
     
     public void inicializarComponentes() {
-        jugador = new Jugador(10, 400, 2, CANASTO);
-        legumbre = new Legumbre(10, 10, 1, LEGUMBRE);
+        jugador = new Jugador(10, 400, 7, CANASTO);
         root = new Group();
         escena = new Scene(root, 700, 500);
+        int numero = (int) (Math.random() * 600) + 1;
+        legumbre = new Legumbre(numero, -100, 1, LEGUMBRE);
         lienzo = new Canvas(700, 500);
         root.getChildren().add(lienzo);
         graficos = lienzo.getGraphicsContext2D();
@@ -87,7 +89,7 @@ public class Juego extends Application {
     
     public void pintar() {
         graficos.drawImage(new Image(FONDO), 0, 0);
-        jugador.pintar(graficos);        
+        jugador.pintar(graficos);
         legumbre.pintar(graficos);
     }
     
@@ -96,7 +98,7 @@ public class Juego extends Application {
             //se ejecuta cuando se presiona una tecla
             @Override
             public void handle(KeyEvent evento) {
-                System.out.println("tecla "+ evento.getCode());
+                //System.out.println("tecla "+ evento.getCode());
                 switch(evento.getCode().toString()){
                     case "RIGHT":
                        derecha = true;
@@ -115,7 +117,7 @@ public class Juego extends Application {
                        break;
                        
                     case "SPACE":
-                        jugador.setVelocidad(10);
+                        jugador.setVelocidad(20);
                         break;
                 }
             }
@@ -124,7 +126,7 @@ public class Juego extends Application {
             //se ejecuta cuando se suelta una tecla
             @Override
             public void handle(KeyEvent evento) {
-                System.out.println("tecla soltada "+ evento.getCode());
+                //System.out.println("tecla soltada "+ evento.getCode());
                 switch(evento.getCode().toString()){
                     case "RIGHT":
                        derecha = false;
@@ -141,9 +143,9 @@ public class Juego extends Application {
                     case "DOWN":
                        abajo = false;
                        break;  
-                       
+                    
                     case "SPACE":
-                        jugador.setVelocidad(4);
+                        jugador.setVelocidad(20);
                         break;
                 }
             }
