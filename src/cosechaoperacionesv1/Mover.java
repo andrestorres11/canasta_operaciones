@@ -82,10 +82,10 @@ public class Mover extends javax.swing.JFrame {
       y=CanastoLab.getY();
         System.out.println(CanastoLab.getLocation());
         switch(evt.getExtendedKeyCode()){
-            case KeyEvent.VK_UP: if(CanastoLab.getY()>=390) CanastoLab.setLocation(x, y -2);break; //Codigo para movimiento asi arriba
-            case KeyEvent.VK_DOWN: if(CanastoLab.getY()<=455)CanastoLab.setLocation(x, y+2);break; //Codigo para movimiento asi abajo
-            case KeyEvent.VK_RIGHT: if(CanastoLab.getX()<=838)CanastoLab.setLocation(x+2, y);break; //Codigo para movimineto asi la derecha
-            case KeyEvent.VK_LEFT:if(CanastoLab.getX()>=-6) CanastoLab.setLocation(x-2, y);break;// Codigo para movimiento asi izquierda
+            case KeyEvent.VK_UP: if(CanastoLab.getY()>=390) CanastoLab.setLocation(x, y -60);break; //Codigo para movimiento asi arriba
+            case KeyEvent.VK_DOWN: if(CanastoLab.getY()<=455)CanastoLab.setLocation(x, y+60);break; //Codigo para movimiento asi abajo
+            case KeyEvent.VK_RIGHT: if(CanastoLab.getX()<=838)CanastoLab.setLocation(x+60, y);break; //Codigo para movimineto asi la derecha
+            case KeyEvent.VK_LEFT:if(CanastoLab.getX()>=-6) CanastoLab.setLocation(x-60, y);break;// Codigo para movimiento asi izquierda
         }
     }//GEN-LAST:event_PanelKeyPressed
 //Realizado por @author acastroc 12-06-20

@@ -1,6 +1,7 @@
 package cosechaoperacionesv1;
 
 import cosechaoperacionesv1.clases.Jugador;
+import cosechaoperacionesv1.clases.Legumbre;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -20,13 +21,16 @@ public class Juego extends Application {
     private Scene escena;
     private Canvas lienzo;
     private Jugador jugador;
+    private Legumbre legumbre;
     private int x = 0;
     public static boolean arriba;    
     public static boolean abajo;
     public static boolean derecha;
     public static boolean izquierda;
-    private static final String FONDO = "file:/home/andrestorres/NetBeansProjects/mavenproject3/src/main/java/com/mycompany/mavenproject3/imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2.png";
-    private static final String CANASTO = "file:/home/andrestorres/NetBeansProjects/mavenproject3/src/main/java/com/mycompany/mavenproject3/imagenesJuegoParadigmas/interfaz-juego-canasto/canasto2.png";
+    private static final String FONDO = "/imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2-12-0620.png";
+    private static final String CANASTO = "/imagenesJuegoParadigmas/interfaz-juego-canasto/canasto2.png";
+    private static final String LEGUMBRE = "/imagenesJuegoParadigmas/interfaz-juego-canasto/14.png";
+
     
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
@@ -45,7 +49,7 @@ public class Juego extends Application {
         inicializarComponentes();
         gestionEventos();
         ventana.setScene(escena);
-        ventana.setTitle("super juego");
+        ventana.setTitle("cosecha operaciones");
         ventana.show();
         cicloJuego();
     }
@@ -71,7 +75,8 @@ public class Juego extends Application {
     }
     
     public void inicializarComponentes() {
-        jugador = new Jugador(20, 400, 3, CANASTO);
+        jugador = new Jugador(10, 400, 2, CANASTO);
+        legumbre = new Legumbre(10, 10, 1, LEGUMBRE);
         root = new Group();
         escena = new Scene(root, 700, 500);
         lienzo = new Canvas(700, 500);
@@ -82,7 +87,8 @@ public class Juego extends Application {
     
     public void pintar() {
         graficos.drawImage(new Image(FONDO), 0, 0);
-        jugador.pintar(graficos);
+        jugador.pintar(graficos);        
+        legumbre.pintar(graficos);
     }
     
     public void gestionEventos() {
@@ -109,7 +115,7 @@ public class Juego extends Application {
                        break;
                        
                     case "SPACE":
-                        jugador.setVelocidad(15);
+                        jugador.setVelocidad(10);
                         break;
                 }
             }
@@ -137,7 +143,7 @@ public class Juego extends Application {
                        break;  
                        
                     case "SPACE":
-                        jugador.setVelocidad(3);
+                        jugador.setVelocidad(4);
                         break;
                 }
             }
