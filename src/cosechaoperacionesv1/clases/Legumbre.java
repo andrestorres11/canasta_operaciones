@@ -8,6 +8,8 @@ package cosechaoperacionesv1.clases;
 import cosechaoperacionesv1.Juego;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 /**
  * POLITECNICO GRACOLOMBIANO
@@ -23,6 +25,19 @@ public class Legumbre {
     private int y;
     private String nombreImagen;
     private int velocidad = 2;
+    private static final String LEGUMBRE2 = "/imagenesJuegoParadigmas/interfaz-juego-canasto/5.png";
+    private int ancho;    
+    private int alto;
+    private int puntaje;
+    private boolean capturado = false;
+
+    public boolean isCapturado() {
+        return capturado;
+    }
+
+    public void setCapturado(boolean capturado) {
+        this.capturado = capturado;
+    }
     
     /**
      * POLITECNICO GRACOLOMBIANO Pradigmas de Programacion Ingenieria Software
@@ -74,13 +89,25 @@ public class Legumbre {
         return nombreImagen;
     }
     
+    public Rectangle obtenerRectangulo(){
+        return new Rectangle(x, y, this.ancho, this.alto);
+    }
+    
     /**
      * POLITECNICO GRACOLOMBIANO Pradigmas de Programacion Ingenieria Software
      * @description se ejecuta por cada iteracion del ciclo de juego
      * @author antorres21 Andres Torres Codigo:1710010952 Fecha de Inicio:10-06-20
     */
     public void pintar(GraphicsContext graficos) {
-        graficos.drawImage(new Image(nombreImagen), x, y);
+        if (this.capturado) {
+            return;
+        }
+        Image image = new Image(nombreImagen);
+        graficos.drawImage(image, x, y);
+        this.ancho = (int)image.getWidth();        
+        this.alto = (int)image.getHeight();
+        graficos.setFill(Color.RED);
+        graficos.strokeRect(x, y, this.ancho, this.alto);
     }
     
     /**
@@ -98,9 +125,10 @@ public class Legumbre {
         }
         
         int numero = (int) (Math.random() * 600) + 1;
-        if (y >= 410 ){ //validacion para que al llegar abajo vuelva a aparecer arriba
+        if (y >= 480 ){ //validacion para que al llegar abajo vuelva a aparecer arriba
             x = numero;
             y = -150;
+            setNombreImagen(LEGUMBRE2);
         }
         
         if (y <= 300 ){ //validacion para que llegue al limite de la pantalla arriba

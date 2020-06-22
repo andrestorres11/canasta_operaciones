@@ -8,6 +8,8 @@ package cosechaoperacionesv1.clases;
 import cosechaoperacionesv1.Juego;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 /**
  * POLITECNICO GRACOLOMBIANO
@@ -24,6 +26,8 @@ public class Jugador {
     private int vidas;
     private String nombreImagen;
     private int velocidad = 7;
+    private int ancho;    
+    private int alto;
     
     /**
      * POLITECNICO GRACOLOMBIANO Pradigmas de Programacion Ingenieria Software
@@ -84,13 +88,22 @@ public class Jugador {
         return nombreImagen;
     }
     
+    public Rectangle obtenerRectangulo(){
+        return new Rectangle(x, y, this.ancho, 5);
+    }
+    
     /**
      * POLITECNICO GRACOLOMBIANO Pradigmas de Programacion Ingenieria Software
      * @description se ejecuta por cada iteracion del ciclo de juego
      * @author antorres21 Andres Torres Codigo:1710010952 Fecha de Inicio:10-06-20
     */
     public void pintar(GraphicsContext graficos) {
-        graficos.drawImage(new Image(nombreImagen), x, y);
+        Image image = new Image(nombreImagen);  
+        graficos.drawImage(image, x, y);
+        this.ancho = (int)image.getWidth();        
+        this.alto = (int)image.getHeight();
+        graficos.setFill(Color.RED);
+        graficos.strokeRect(x, y, this.ancho, 5);
     }
     
     /**
@@ -138,6 +151,13 @@ public class Jugador {
 
     public void setVelocidad(int velocidad) {
         this.velocidad = velocidad;
+    }
+    
+    public void verificarColisionLegumbres(Legumbre legumbre){
+        if(!legumbre.isCapturado() && this.obtenerRectangulo().getBoundsInLocal().intersects(legumbre.obtenerRectangulo().getBoundsInLocal()) ){
+            this.vidas += 1;    
+            legumbre.setCapturado(true);
+        }
     }
     
 }
