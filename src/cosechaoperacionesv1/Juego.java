@@ -29,8 +29,7 @@ public class Juego extends Application {
     public static boolean izquierda;
     private static final String FONDO = "/imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2-12-0620.png";
     private static final String CANASTO = "/imagenesJuegoParadigmas/interfaz-juego-canasto/canasto2.png";
-    private static final String LEGUMBRE = "/imagenesJuegoParadigmas/interfaz-juego-canasto/1.png";
-
+    private static final String LEGUMBRE = "/imagenesJuegoParadigmas/interfaz-juego-canasto/3.png";
     
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
@@ -45,7 +44,7 @@ public class Juego extends Application {
     }
     
     @Override
-    public void start(Stage ventana) throws Exception {
+    public void start(Stage ventana) throws  Exception {
         inicializarComponentes();
         gestionEventos();
         ventana.setScene(escena);
@@ -71,12 +70,13 @@ public class Juego extends Application {
     }
     
     public void actualizarEstado(){
+        jugador.verificarColisionLegumbres(legumbre);
         jugador.mover();
         legumbre.mover();
     }
     
     public void inicializarComponentes() {
-        jugador = new Jugador(10, 400, 7, CANASTO);
+        jugador = new Jugador(10, 400, 0, CANASTO);
         root = new Group();
         escena = new Scene(root, 700, 500);
         int numero = (int) (Math.random() * 600) + 1;
@@ -91,6 +91,7 @@ public class Juego extends Application {
         graficos.drawImage(new Image(FONDO), 0, 0);
         jugador.pintar(graficos);
         legumbre.pintar(graficos);
+        graficos.fillText("Puntos: "+jugador.getVidas(), 20, 20);
     }
     
     public void gestionEventos() {
