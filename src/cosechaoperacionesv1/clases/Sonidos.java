@@ -8,10 +8,10 @@ package cosechaoperacionesv1.clases;
 import java.io.File;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
 /**
+ * POLITECNICO GRACOLOMBIANO Pradigmas de Programacion Ingenieria Software
  *
- * @author acastroc
+ * @author acastroc Albeiro Castro Codigo:2011023897 Fecha de Inicio:12-06-20
  */
 public class Sonidos {
     File fondo=new File("la-atmosfera_4.mp3");/**Se crea el objeto file con la ruta del sonido*/
