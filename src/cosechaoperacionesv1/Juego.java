@@ -2,6 +2,7 @@ package cosechaoperacionesv1;
 
 import cosechaoperacionesv1.clases.Jugador;
 import cosechaoperacionesv1.clases.Legumbre;
+import cosechaoperacionesv1.clases.Sonidos;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -30,7 +31,7 @@ public class Juego extends Application {
     private static final String FONDO = "/imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2-12-0620.png";
     private static final String CANASTO = "/imagenesJuegoParadigmas/interfaz-juego-canasto/canasto2.png";
     private static final String LEGUMBRE = "/imagenesJuegoParadigmas/interfaz-juego-canasto/3.png";
-    
+    Sonidos reproduce  =new Sonidos();
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
      * main() serves only as fallback in case the application can not be
@@ -51,6 +52,7 @@ public class Juego extends Application {
         ventana.setTitle("cosecha operaciones");
         ventana.show();
         cicloJuego();
+        reproduce.SonidoFondo();
     }
     
     public void cicloJuego() {
