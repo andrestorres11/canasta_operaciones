@@ -21,6 +21,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.collections.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="389.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosechaoperacionesv1.InicioController">
     <children>
@@ -29,7 +30,7 @@
                 <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="57.0" fitWidth="255.0" layoutX="198.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="68.0" fitWidth="283.0" layoutX="171.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../imagenesJuegoParadigmas/interfaz-juego-canasto/titulo.png" />
             </image>
@@ -76,7 +77,7 @@
       </Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="126.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagenesJuegoParadigmas/interfaz-juego-canasto/personaje1.png" />
+            <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/personaje3.png" />
          </image>
       </ImageView>
       <Label layoutX="222.0" layoutY="92.0" prefHeight="57.0" prefWidth="173.0" text="Para dezplazar el canasto debe utilizar las fechas de su teclado." textFill="#5b3b3b" textOverrun="WORD_ELLIPSIS" wrapText="true">

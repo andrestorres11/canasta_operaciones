@@ -7,9 +7,12 @@
  * @author acastroc
  * Albeiro Castro
  * Codigo:2011023897
- * Fecha de Inicio:12-06-20
+ * Fecha de Inicio:22-06-20
  */-->
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.media.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -18,16 +21,40 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.collections.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosechaoperacionesv1.InicioController">
+<AnchorPane id="AnchorPane" prefHeight="389.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosechaoperacionesv1.InicioController">
     <children>
-       <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-       <ImageView fitHeight="347.0" fitWidth="617.0" layoutY="-3.0" preserveRatio="true" smooth="true">
+       <ImageView fitHeight="389.0" fitWidth="698.0" nodeOrientation="RIGHT_TO_LEFT" smooth="false">
             <image>
                 <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/fondo2.png" />
             </image>
         </ImageView>
-        <Button id="Click" fx:id="button" contentDisplay="CENTER" layoutX="101.0" layoutY="160.0" mnemonicParsing="false" onAction="#Comenzar" prefHeight="30.0" prefWidth="105.0" text="Play" AnchorPane.bottomAnchor="159.0" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="411.0" AnchorPane.topAnchor="160.0">
+        <ImageView fitHeight="68.0" fitWidth="283.0" layoutX="171.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenesJuegoParadigmas/interfaz-juego-canasto/titulo.png" />
+            </image>
+        </ImageView>
+      <Button id="Cerrar" fx:id="btncerrar" contentDisplay="CENTER" layoutX="544.0" layoutY="314.0" mnemonicParsing="false" onAction="#cerrarVentanaM" prefHeight="25.0" prefWidth="105.0" text="Cerrar">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/btn-salir%20(1).png" />
+               </source>
+            </ImageInput>
+         </effect>
+      </Button>
+      <ImageView fitHeight="230.0" fitWidth="200.0" layoutX="496.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/tablero1-1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="510.0" layoutY="48.0" prefHeight="144.0" prefWidth="173.0" text="Cosecha de Operaciones es un &#10;juego que esta desarrollo &#10;pensado en nuestros &#10;niños y niñas  con el fin de &#10;apoyar sus procesos de &#10;aprendizaje en sus primeras &#10;etapas." textAlignment="CENTER" textFill="#5b4949" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Franklin Gothic Demi" size="12.0" />
+         </font>
+      </Label>
+        <Button id="Click" fx:id="button" contentDisplay="CENTER" layoutX="542.0" layoutY="184.0" mnemonicParsing="false" onAction="#Comenzar" prefHeight="31.0" prefWidth="113.0" text="Play" AnchorPane.bottomAnchor="174.0" AnchorPane.leftAnchor="542.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="184.0">
             <font>
                 <Font size="14.0" />
             </font>
@@ -39,54 +66,77 @@
             </ImageInput>
          </effect>
         </Button>
-        <ImageView fitHeight="53.0" fitWidth="200.0" layoutX="198.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../imagenesJuegoParadigmas/interfaz-juego-canasto/titulo.png" />
-            </image>
-        </ImageView>
-      <Button id="Opcion" fx:id="btnopciones" contentDisplay="CENTER" layoutX="101.0" layoutY="196.0" mnemonicParsing="false" onAction="#Opciones" prefHeight="25.0" prefWidth="105.0" text="opciones">
+      <Label layoutX="214.0" layoutY="65.0" prefHeight="31.0" prefWidth="125.0" text="Control">
          <effect>
             <ImageInput>
                <source>
-                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/btn-opciones2.png" />
-               </source>
-            </ImageInput>
-         </effect></Button>
-      <Button id="Cerrar" fx:id="btncerrar" contentDisplay="CENTER" layoutX="101.0" layoutY="235.0" mnemonicParsing="false" onAction="#cerrarVentana" prefHeight="25.0" prefWidth="105.0" text="Cerrar">
-         <effect>
-            <ImageInput>
-               <source>
-                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/btn-salir%20(1).png" />
+                  <Image url="@../imagenesJuegoParadigmas/palabras-flechas/controles.png" />
                </source>
             </ImageInput>
          </effect>
-      </Button>
-      <Button layoutX="257.0" layoutY="158.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Button">
-         <effect>
-            <ImageInput>
-               <source>
-                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/on.png" />
-               </source>
-            </ImageInput>
-         </effect>
-      </Button>
-      <Button layoutX="257.0" layoutY="196.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Button">
-         <effect>
-            <ImageInput>
-               <source>
-                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/off.png" />
-               </source>
-            </ImageInput>
-         </effect>
-      </Button>
-      <Button layoutX="257.0" layoutY="235.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Button">
-         <effect>
-            <ImageInput>
-               <source>
-                  <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/on.png" />
-               </source>
-            </ImageInput>
-         </effect>
-      </Button>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="126.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenesJuegoParadigmas/interfaz-juego-sumar/personaje3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="222.0" layoutY="92.0" prefHeight="57.0" prefWidth="173.0" text="Para dezplazar el canasto debe utilizar las fechas de su teclado." textFill="#5b3b3b" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Franklin Gothic Demi" size="12.0" />
+         </font>
+      </Label>
+      <ImageView id="Fechas" fx:id="fechas" fitHeight="57.0" fitWidth="91.0" layoutX="395.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenesJuegoParadigmas/palabras-flechas/flechas.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="222.0" layoutY="135.0" prefHeight="57.0" prefWidth="173.0" text="Movimiento asi arriba precione la tecla." textFill="#5b3b3b" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Franklin Gothic Demi" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView id="Fechas" fx:id="fechas1" fitHeight="44.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenesJuegoParadigmas/palabras-flechas/flecha-arriba.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label layoutX="222.0" layoutY="179.0" prefHeight="57.0" prefWidth="173.0" text="Movimiento asi abajo precione la tecla." textFill="#5b3b3b" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Franklin Gothic Demi" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView id="Fechas" fx:id="fechas13" fitHeight="44.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenesJuegoParadigmas/palabras-flechas/flecha-abajo.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label layoutX="222.0" layoutY="226.0" prefHeight="57.0" prefWidth="173.0" text="Movimiento asi la derecha precione la tecla." textFill="#5b3b3b" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Franklin Gothic Demi" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView id="Fechas" fx:id="fechas11" fitHeight="44.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenesJuegoParadigmas/palabras-flechas/flecha-derecha.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label layoutX="222.0" layoutY="276.0" prefHeight="57.0" prefWidth="173.0" text="Movimiento asi izquierda precione la tecla." textFill="#5b3b3b" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Franklin Gothic Demi" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView id="Fechas" fx:id="fechas12" fitHeight="44.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenesJuegoParadigmas/palabras-flechas/flecha-izquierda.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
     </children>
 </AnchorPane>

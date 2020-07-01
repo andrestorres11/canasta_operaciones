@@ -5,6 +5,7 @@
  */
 package cosechaoperacionesv1;
 
+import cosechaoperacionesv1.clases.Sonidos;
 import java.awt.Button;
 import java.io.IOException;
 import java.net.URL;
@@ -25,8 +26,8 @@ import javafx.stage.Stage;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
+//import javazoom.jl.decoder.JavaLayerException;
+//import javazoom.jl.player.Player;
 
 /**
  * POLITECNICO GRACOLOMBIANO Pradigmas de Programacion Ingenieria Software
@@ -34,7 +35,6 @@ import javazoom.jl.player.Player;
  * @author acastroc Albeiro Castro Codigo:2011023897 Fecha de Inicio:12-06-20
  */
 public class InicioController implements Initializable {
-
     @FXML
     private Label label;
     private Button button;
@@ -49,20 +49,6 @@ public class InicioController implements Initializable {
         Stage stage = new Stage(); /**se instancia el objeto stage*/
         Juego juego = new Juego(); //se instancia el objeto juego
         juego.start(stage); //se llama a la clase principal del juego
-
-//        try {
-//            FileInputStream pista;
-//            Player player;
-//            pista = new FileInputStream("C:\\Users\\ACASTROC\\Desktop\\Git\\canasta_operaciones\\src\\imagenesJuegoParadigmas\\aves_16.mp3");
-//            BufferedInputStream sonido =new BufferedInputStream(pista);
-//            
-//            player = new Player(sonido);
-//            player.play();
-//        } catch (JavaLayerException e) {
-//            e.printStackTrace();
-//        }catch (FileNotFoundException e){
-//            e.printStackTrace();
-//        }
     }
 
     @FXML
