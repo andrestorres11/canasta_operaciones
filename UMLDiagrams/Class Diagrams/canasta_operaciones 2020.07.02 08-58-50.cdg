@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="canasta_operaciones">
+  <ClassDiagramComponents>
+    <Class name="Jugador" package="cosechaoperacionesv1.clases" visibility="public" xPosition="5.0" yPosition="37.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="y" type="int" visibility="private"/>
+        <Field name="vidas" type="int" visibility="private"/>
+        <Field name="nombreImagen" type="String" visibility="private"/>
+        <Field name="velocidad" type="int" visibility="private"/>
+        <Field name="ancho" type="int" visibility="private"/>
+        <Field name="alto" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="vidas"/>
+          <Argument type="String" name="nombreImagen"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setX" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="setY" returnType="void" visibility="public">
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="setVidas" returnType="void" visibility="public">
+          <Argument type="int" name="vidas"/>
+        </Method>
+        <Method name="setNombreImagen" returnType="void" visibility="public">
+          <Argument type="String" name="nombreImagen"/>
+        </Method>
+        <Method name="getX" returnType="int" visibility="public"/>
+        <Method name="getY" returnType="int" visibility="public"/>
+        <Method name="getVidas" returnType="int" visibility="public"/>
+        <Method name="getNombreImagen" returnType="String" visibility="public"/>
+        <Method name="obtenerRectangulo" returnType="Rectangle" visibility="public"/>
+        <Method name="pintar" returnType="void" visibility="public">
+          <Argument type="GraphicsContext" name="graficos"/>
+        </Method>
+        <Method name="mover" returnType="void" visibility="public"/>
+        <Method name="getVelocidad" returnType="int" visibility="public"/>
+        <Method name="setVelocidad" returnType="void" visibility="public">
+          <Argument type="int" name="velocidad"/>
+        </Method>
+        <Method name="verificarColisionLegumbres" returnType="void" visibility="public">
+          <Argument type="Legumbre" name="legumbre"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Legumbre" package="cosechaoperacionesv1.clases" visibility="public" xPosition="430.0" yPosition="10.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="y" type="int" visibility="private"/>
+        <Field name="nombreImagen" type="String" visibility="private"/>
+        <Field name="velocidad" type="int" visibility="private"/>
+        <Field name="LEGUMBRE2" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="ancho" type="int" visibility="private"/>
+        <Field name="alto" type="int" visibility="private"/>
+        <Field name="puntaje" type="int" visibility="private"/>
+        <Field name="capturado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="vidas"/>
+          <Argument type="String" name="nombreImagen"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isCapturado" returnType="boolean" visibility="public"/>
+        <Method name="setCapturado" returnType="void" visibility="public">
+          <Argument type="boolean" name="capturado"/>
+        </Method>
+        <Method name="setX" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="setY" returnType="void" visibility="public">
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="setNombreImagen" returnType="void" visibility="public">
+          <Argument type="String" name="nombreImagen"/>
+        </Method>
+        <Method name="getX" returnType="int" visibility="public"/>
+        <Method name="getY" returnType="int" visibility="public"/>
+        <Method name="getNombreImagen" returnType="String" visibility="public"/>
+        <Method name="obtenerRectangulo" returnType="Rectangle" visibility="public"/>
+        <Method name="pintar" returnType="void" visibility="public">
+          <Argument type="GraphicsContext" name="graficos"/>
+        </Method>
+        <Method name="mover" returnType="void" visibility="public"/>
+        <Method name="getVelocidad" returnType="int" visibility="public"/>
+        <Method name="setVelocidad" returnType="void" visibility="public">
+          <Argument type="int" name="velocidad"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="plaga" package="cosechaoperacionesv1.clases" visibility="public" xPosition="1555.0" yPosition="343.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Sonidos" package="cosechaoperacionesv1.clases" visibility="public" xPosition="816.0" yPosition="37.0">
+      <Fields>
+        <Field name="fondo" type="File" visibility="package"/>
+        <Field name="sfondo" type="String" visibility="package"/>
+        <Field name="mediaplayer" type="MediaPlayer" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="SonidoFondo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CosechaOperacionesV1" package="cosechaoperacionesv1" visibility="public" xPosition="1128.0" yPosition="37.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="stage"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InicioController" package="cosechaoperacionesv1" visibility="public" xPosition="944.0" yPosition="248.0">
+      <Fields>
+        <Field name="label" type="Label" visibility="private"/>
+        <Field name="button" type="Button" visibility="private"/>
+        <Field name="btnopciones" type="Button" visibility="private"/>
+        <Field name="btncerrar" type="Button" visibility="private"/>
+        <Field name="btnsalirm" type="Button" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Comenzar" returnType="/**Evento mendiante el boton para llamar la interfaz de juego*/ void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="Opciones" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="cerrarVentana" returnType="void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="cerrarVentanaM" returnType="/**Evento para cerrar la venta de opciones @acastroc */ void" visibility="private">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="url"/>
+          <Argument type="ResourceBundle" name="rb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Juego" package="cosechaoperacionesv1" visibility="public" xPosition="478.0" yPosition="628.0">
+      <Fields>
+        <Field name="graficos" type="GraphicsContext" visibility="private"/>
+        <Field name="root" type="Group" visibility="private"/>
+        <Field name="escena" type="Scene" visibility="private"/>
+        <Field name="lienzo" type="Canvas" visibility="private"/>
+        <Field name="jugador" type="Jugador" visibility="private"/>
+        <Field name="legumbre" type="Legumbre" visibility="private"/>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="arriba" type="boolean" visibility="public" isStatic="true"/>
+        <Field name="abajo" type="boolean" visibility="public" isStatic="true"/>
+        <Field name="derecha" type="boolean" visibility="public" isStatic="true"/>
+        <Field name="izquierda" type="boolean" visibility="public" isStatic="true"/>
+        <Field name="FONDO" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="CANASTO" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="LEGUMBRE" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="reproduce" type="Sonidos" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="ventana"/>
+        </Method>
+        <Method name="cicloJuego" returnType="void" visibility="public"/>
+        <Method name="actualizarEstado" returnType="void" visibility="public"/>
+        <Method name="inicializarComponentes" returnType="void" visibility="public"/>
+        <Method name="pintar" returnType="void" visibility="public"/>
+        <Method name="gestionEventos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Mover" package="cosechaoperacionesv1" visibility="public" xPosition="1530.0" yPosition="10.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="movimientoX" type="int" visibility="private"/>
+        <Field name="movimientoy" type="int" visibility="private"/>
+        <Field name="distanmaxX" type="int" visibility="private"/>
+        <Field name="CanastoLab" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="FondoLab" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Panel" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="Titulo2Lab" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="PanelKeyPressed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="reproduce" source="cosechaoperacionesv1.Juego" target="cosechaoperacionesv1.clases.Sonidos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="legumbre" source="cosechaoperacionesv1.Juego" target="cosechaoperacionesv1.clases.Legumbre" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jugador" source="cosechaoperacionesv1.Juego" target="cosechaoperacionesv1.clases.Jugador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="cosechaoperacionesv1.clases.Jugador" target="cosechaoperacionesv1.clases.Legumbre" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
